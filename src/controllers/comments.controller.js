@@ -35,6 +35,7 @@ class CommentsController {
   // that is implemented differently
   render(comment, imageId){
     const $ul = $(`#image-${imageId} ul`);
-    $ul.append(`<li>${comment}</li>`);
+    const htmlString = new Comment(comment, imageId).commentEl();
+    $ul.append(htmlString);
   }
 }
